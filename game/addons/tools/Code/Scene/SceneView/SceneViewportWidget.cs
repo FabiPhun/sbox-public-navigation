@@ -420,7 +420,8 @@ public partial class SceneViewportWidget : Widget
 			bool HasSelection = Session.Selection.OfType<GameObject>().Any();
 			menu.AddOption( "Cut", "content_cut", EditorScene.Cut, "editor.cut" ).Enabled = HasSelection;
 			menu.AddOption( "Copy", "content_copy", EditorScene.Copy, "editor.copy" ).Enabled = HasSelection;
-			menu.AddOption( "Paste", "content_paste", PasteAtCursor );
+			menu.AddOption( "Paste", "content_paste", PasteAtCursor, "editor.paste" );
+			menu.AddOption( "Paste Special", "content_paste_go", EditorScene.PasteSpecial, "editor.paste-special" );
 			menu.AddSeparator();
 			menu.AddOption( "Duplicate", "file_copy", SceneEditorMenus.Duplicate, "editor.duplicate" ).Enabled = HasSelection;
 			menu.AddOption( "Delete", "delete", SceneEditorMenus.Delete, "editor.delete" ).Enabled = HasSelection;
